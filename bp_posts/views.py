@@ -25,7 +25,7 @@ def page_posts_index():
 
 
 @bp_posts.route("/posts/<int:pk>/")
-def page_posts_single(pk: int):
+def page_posts_single(pk: int, posts=None):
     """Страничка одного постоа"""
     post: Any[Post, None] = post_dao.get_by_pk(pk)
     comments: List[Comment] = comments_dao.get_comments_by_post_pk(pk)

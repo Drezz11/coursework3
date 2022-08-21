@@ -33,12 +33,12 @@ def api_posts_all():
 @bp_api.route('/posts/<int:pk>/')
 def api_posts_single(pk: int):
     """Это поинт для одного постоа"""
-    post: Optional[Post] = post_dao.get_by_pk(pk)
-    if post is None:
+    posts: Optional[Post] = post_dao.get_by_pk(pk)
+    if posts is None:
         api_logger.debug(f"Обращение к несуществующему посту {pk}")
         abort(404)
     api_logger.debug(f"Запрошен пост {pk}")
-    return jsonify(post.as_dict()), 200
+    return jsonify(posts.as_dict()), 200
 
 
 @bp_api.errorhandler(404)
