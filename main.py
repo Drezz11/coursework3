@@ -34,5 +34,6 @@ def page_error_data_source_error(error):
     return f"Ошибка на сайте поломались данны {error}", 500
 
 
+app = creat_and_config_app()
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
