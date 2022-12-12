@@ -3,8 +3,9 @@ Description=Flask app service
 After=network.target
 
 [Service]
+User=avishnyakov
 WorkingDirectory=/home/avishnyakov/coursework3
-ExecStart=/home/avishnyakov/coursework3/app/venv/bin/python -m gunicorn run:app -b 0.0.0.0:25000 -w 4
+ExecStart=/usr/local/bin/gunicorn gunicorn main:app -b 0.0.0.0:9000 -w 4
 
 [Install]
 WantedBy=multi-user.target
