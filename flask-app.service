@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=avishnyakov
 WorkingDirectory=/home/avishnyakov/coursework3
-ExecStart=/usr/local/bin/gunicorn gunicorn main:app -b 0.0.0.0:9000 -w 4
+ExecStart=/home/avishnyakov/.local/bin/gunicorn gunicorn main:app -b 0.0.0.0:9000 -w 4
 
 [Install]
 WantedBy=multi-user.target
